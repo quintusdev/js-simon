@@ -21,24 +21,32 @@ setTimeout(function() {
     numArray.innerText = '';
 }, second * 1000);
 
+// Creo la funzione setTimeout che fa inserire all'utente i numeri
+setTimeout(function() {
+    // Creo 5 prompt dove faccio inserire all'utente i numeri che si ricorda
+    let num1 = parseInt(prompt('Inserisci il primo numero'));
+    let num2 = parseInt(prompt('Inserisci il secondo numero'));
+    let num3 = parseInt(prompt('Inserisci il terzo numero'));
+    let num4 = parseInt(prompt('Inserisci il quarto numero'));
+    let num5 = parseInt(prompt('Inserisci il quinto numero'));
 
-//Creo la funzione setTimeout he fa inserire all'utente i numeri
-setTimeout(function(){
+    // Confronto i numeri in input con quelli dell'array
+    const numutente = [num1, num2, num3, num4, num5];
 
-//creo 5 prompt dove faccio inserire all'utente i numeri che si ricorda
-let num1 = parseInt(prompt('Inserisci il primo numero'));
-let num2 = parseInt(prompt('Inserisci il secondo numero'));
-let num3 = parseInt(prompt('Inserisci il terzo numero'));
-let num4 = parseInt(prompt('Inserisci il quarto numero'));
-let num5 = parseInt(prompt('Inserisci il quinto numero'));
+    console.log(numutente);
+    console.log(gennum_random);
 
-//confronto i numeri in input con quelli dell'array
+    // Creo un array vuoto dove andranno inseriti i numeri indovinati
+    const numeriIndovinati = [];
+
+    // Scorro l'array dei numeri utente e verifico se sono inclusi e memorizzo la quantità e i numeri indovinati
+    for (let i = 0; i < numutente.length; i++) {
+        if (gennum_random.includes(numutente[i])) {
+            numeriIndovinati.push(numutente[i]);
+        }
+    }
+
+    // Visualizzo i numeri indovinati e la quantità
+    alert("Numeri indovinati: " + numeriIndovinati + "\nQuantità di numeri indovinati: " + numeriIndovinati.length);
 
 }, (second + 1) * 1000);
-
-
-
-
-
-
-
