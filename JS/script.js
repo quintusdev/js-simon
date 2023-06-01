@@ -29,7 +29,7 @@ setTimeout(function() {
     let num3 = parseInt(prompt('Inserisci il terzo numero'));
     let num4 = parseInt(prompt('Inserisci il quarto numero'));
     let num5 = parseInt(prompt('Inserisci il quinto numero'));
-
+    
     // Confronto i numeri in input con quelli dell'array
     const numutente = [num1, num2, num3, num4, num5];
 
@@ -41,7 +41,7 @@ setTimeout(function() {
 
     // Scorro l'array dei numeri utente e verifico se sono inclusi e memorizzo la quantità e i numeri indovinati
     for (let i = 0; i < numutente.length; i++) {
-        if (gennum_random.includes(numutente[i])) {
+        if (gennum_random.includes(numutente[i]) && !numeriIndovinati.includes(numutente[i])) {
             numeriIndovinati.push(numutente[i]);
         }
     }
